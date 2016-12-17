@@ -9,9 +9,19 @@
 	String query = "select price from msproduct where productid = " + productid;
 	ResultSet rs = st.executeQuery(query);
 	if(rs.next()){
-		Integer price = Integer.parseInt(rs.getString(1));
 
-		query = "insert into mscart values(null, "+ userSession.get(0) +", "+ productid +", "+ quantity +", "+ (quantity*price) +")";
+		query = "select * from mscart where productid = " + productid;
+		ResultSet rs2 = stmt.executeQuery(query);
+		if(rs2.next()){
+			query = "update mscart set qty = qty + "+ quantity +" where productid = " + productid;
+			st.executeUpdate(query);
+		}else{
+			Integer price = Integer.parseInt(rs.getString(1));
+			query = "insert into mscart values(null, "+ userSession.get(0) +", "+ productid +", "+ quantity +", "+ (quantity*price) +")";
+			st.executeUpdate(query);
+			
+		}
+		query = "update msproduct set stock = stock - " + quantity +" where productid =" + productid;
 		st.executeUpdate(query);
 		response.sendRedirect("../product.jsp?errMsg=Success add to Cart");
 	}else{

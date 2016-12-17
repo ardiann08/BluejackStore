@@ -52,9 +52,7 @@ label{
 				rs = st.executeQuery(query);
 				if(rs.next()){
 			%>
-				<label class="pull-right">Rp. <%= rs.getString(1) %>,-</label>
-			<%} else {%>
-				<label class="pull-right">Rp. 0 ></label>
+				<label class="pull-right">Rp. <%= rs.getString(1) != null ? rs.getString(1)  : "0" %>,-</label>
 			<%}%>
 		</label>
 	</div>
