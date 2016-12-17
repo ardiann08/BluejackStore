@@ -29,13 +29,16 @@
         			</div>
         			<img src="Assets/img/product/<%=rs.getString("image")%>" alt="" style="width: 100%;">
         		</div>
-        		<div class="col-md-8">
+        		<div class="col-md-5">
         			<label for="" style="display: block;">Name : <%=rs.getString("name")%></label>
         			<label for="" style="display: block;">Price : Rp.<%=rs.getString("price")%>,-</label>
         			<label for="" style="display: block;">Weight : <%=rs.getString("weight")%>kg</label>
         			<label for="" style="display: block;">Stock : <%=rs.getString("stock")%>pcs</label>
         			<em>Inserted by <%=rs.getString("fullname")%></em>
         		</div>
+                <div class="col-md-3" style="margin-top: 40px;">
+                    <a href="comment.jsp?id=<%=rs.getString("productid")%>" class="btn btn-default">View Comment</a>
+                </div>
                 <%
                 if(userSession.get(10).equals("member")==true){%>
         		<div class="col-md-2" style="position: relative;height: 120px;display: block;">
