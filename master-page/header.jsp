@@ -1,4 +1,9 @@
 <%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList" %>
+
+<%
+    ArrayList userSession = (ArrayList)session.getAttribute("userSession");
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,13 +56,13 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a>Hi, Guest</a>
+                        <a>Hi, Guest </a>
                     </li>
                     <li>
-                        <a href="#">Register</a>
+                        <a href="register.jsp">Register</a>
                     </li> 
                     <li>
-                        <a href="#">Login</a>
+                        <a href="login.jsp">Login</a>
                     </li>                                   
                 </ul>
             </div>            
