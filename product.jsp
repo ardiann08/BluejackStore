@@ -7,8 +7,8 @@
             <label style="color: red"> <%= request.getParameter("errMsg") != null ? request.getParameter("errMsg") : "" %>  </label>
         	<h2 style="text-align: center">Product List</h2>
         	<div class="col-md-4 col-md-offset-4" style="margin-bottom: 30px;">
-        		<form action="searchproduct.jsp">
-        			<input type="text" style="width: 80%;padding: 10px;" placeholder="Search Product ex. Sepatu Bola" name="txtsearch"><button type="submit"  class="btn btn-primary" style="height: 42px;""><span class="glyphicon glyphicon-search"></span></button>
+        		<form action="product.jsp" method="get">
+        			<input type="text" style="width: 80%;padding: 10px;" placeholder="Search Product ex. Sepatu Bola" name="search"><button type="submit"  class="btn btn-primary" style="height: 42px;""><span class="glyphicon glyphicon-search"></span></button>
         		</form>		
         	</div>
         	<%
