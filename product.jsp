@@ -39,9 +39,13 @@
                 if(userSession.get(10).equals("member")==true){%>
         		<div class="col-md-2" style="position: relative;height: 120px;">
         			<form action="" style="height: : 100%;">
+        		<div class="col-md-2" style="position: relative;height: 120px;display: block;">
+        			<form action="Controller/addCartController.jsp" method="POST">
         				<div class="form-group">       				
         					<label >Qty : </label>
         					<input type="number" class="form-control" min="0" style="width: 100px;display: inline;">
+                            <input type="hidden" name="txtProductid" value="<%= rs.getString("productid") %>" />
+        					<input type="number" class="form-control" name="txtQty" min="0" style="width: 100px;display: inline;">
         				</div>
         				<button class="btn btn-success" style="position: absolute;bottom: 0px;">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></button>
         			</form>		
@@ -80,6 +84,7 @@
 				$("#okConfirm").click(function(){
 					$.ajax({
 						url:"controller/doRemoveProduct.jsp",
+						url:"Controller/doRemoveProduct.jsp",
 						type:"POST",
 						data :{id : idProducts},
 						success:function(result){
