@@ -1,7 +1,7 @@
 <%@include file ="Connection/connect.jsp"%>
 <%@include file="master-page/header.jsp"%>
 	<%
-		String query = "select * from msproduct where productid = "+request.getParameter("id");
+		String query = "select * from msproduct where productid = "+userSession.get(0);
 		ResultSet rs = st.executeQuery(query);
 		if(rs.next()){
 	%>
