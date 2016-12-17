@@ -35,7 +35,9 @@
         			<label for="" style="display: block;">Stock : <%=rs.getString("stock")%>pcs</label>
         			<em>Inserted by <%=rs.getString("fullname")%></em>
         		</div>
-        		<div class="col-md-2" style="position: relative;height: 120px;display: none;">
+                <%
+                if(userSession.get(10).equals("member")==true){%>
+        		<div class="col-md-2" style="position: relative;height: 120px;">
         			<form action="" style="height: : 100%;">
         				<div class="form-group">       				
         					<label >Qty : </label>
@@ -44,10 +46,12 @@
         				<button class="btn btn-success" style="position: absolute;bottom: 0px;">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></button>
         			</form>		
         		</div>
+                <%}else if(userSession.get(10).equals("admin")==true){%>
         		<div class="col-md-2"> 
         			<a class="btn btn-success" href="updateproduct.jsp?id=<%=rs.getString("productid")%>">Update</a>
 					<button class="btn btn-danger" onclick="deleteproduct('<%=rs.getString("productid")%>')">Delete</button>
         		</div>
+                <%}%>
         	</div>
         	<%}%>
         	
