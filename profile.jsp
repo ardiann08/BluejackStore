@@ -10,7 +10,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<h1 style="text-align: center;">Profile</h1>
 				<div class="col-md-4 col-md-offset-4">
-					<img src="Assets/images/user/<%=rs.getString("photo")%>" alt="" class="img-circle" style="width:100%;border:1px solid black">
+					<img src="Assets/img/user/<%=rs.getString("photo")%>" alt="" class="img-circle" style="width:100%;border:1px solid black">
 				</div>
 				<div class="col-md-12">
 					<hr style="border: 1px solid black">
