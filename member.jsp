@@ -34,23 +34,7 @@
         		</div>
             </div>
             <%}%>
+        </div>
     </div>
-	<div id="confirm" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Are you sure?</h4>
-					</div>
-					<div class="modal-body">
-						<p>Are you sure want to remove this product?</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<button id="okConfirm" type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
-					</div>
-			</div>
-		</div>
-	</div>
 		
 <%@include file="master-page/footer.jsp"%>
