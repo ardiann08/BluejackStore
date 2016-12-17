@@ -18,8 +18,6 @@
 %>
 
 
-
-
 <div class="container">
 	<div class="row col-md-offset-2 col-md-8">
 		<form class="form-horizontal" method="POST" action="Controller/loginController.jsp">
