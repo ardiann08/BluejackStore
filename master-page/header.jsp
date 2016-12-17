@@ -1,5 +1,4 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="java.util.ArrayList" %>
 
 <%
     ArrayList userSession = (ArrayList)session.getAttribute("userSession");

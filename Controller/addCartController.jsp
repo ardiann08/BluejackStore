@@ -4,15 +4,17 @@
 <%
 	ArrayList userSession = (ArrayList)session.getAttribute("userSession");
 	String productid = request.getParameter("txtProductid");
-	String quantity = request.getParameter("txtQty");
+	Integer quantity = Integer.parseInt(request.getParameter("txtQty"));
 
-	
+	String query = "select price from msproduct where productid = " + productid;
+	ResultSet rs = st.executeQuery(query);
+	if(rs.next()){
+		Integer price = Integer.parseInt(rs.getString(1));
 
-
-
-
-
-
-
-
+		query = "insert into mscart values(null, "+ userSession.get(0) +", "+ productid +", "+ quantity +", "+ (quantity*price) +")";
+		st.executeUpdate(query);
+		response.sendRedirect("../product.jsp?errMsg=Success add to Cart");
+	}else{
+		response.sendRedirect("../product.jsp?errMsg=Product id not valid");
+	}
 %>

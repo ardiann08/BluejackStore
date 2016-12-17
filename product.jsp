@@ -4,7 +4,8 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-        	<h2 style="text-align: center;">Product List</h2>
+            <label style="color: red"> <%= request.getParameter("errMsg") != null ? request.getParameter("errMsg") : "" %>  </label>
+        	<h2 style="text-align: center">Product List</h2>
         	<div class="col-md-4 col-md-offset-4" style="margin-bottom: 30px;">
         		<form action="searchproduct.jsp">
         			<input type="text" style="width: 80%;padding: 10px;" placeholder="Search Product ex. Sepatu Bola" name="txtsearch"><button type="submit"  class="btn btn-primary" style="height: 42px;""><span class="glyphicon glyphicon-search"></span></button>
@@ -37,13 +38,11 @@
         		</div>
                 <%
                 if(userSession.get(10).equals("member")==true){%>
-        		<div class="col-md-2" style="position: relative;height: 120px;">
-        			<form action="" style="height: : 100%;">
         		<div class="col-md-2" style="position: relative;height: 120px;display: block;">
         			<form action="Controller/addCartController.jsp" method="POST">
         				<div class="form-group">       				
         					<label >Qty : </label>
-        					<input type="number" class="form-control" min="0" style="width: 100px;display: inline;">
+                            <input type="hidden" name="txtPrice" value="<%=rs.getString("price")%>" />
                             <input type="hidden" name="txtProductid" value="<%= rs.getString("productid") %>" />
         					<input type="number" class="form-control" name="txtQty" min="0" style="width: 100px;display: inline;">
         				</div>
