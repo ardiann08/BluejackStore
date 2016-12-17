@@ -58,6 +58,13 @@
         	</div>
         	<%}%>
         	
+            <div>
+                <a href="addProduct.jsp">
+                    <input type="button" class="btn btn-primary" value="Insert new product" />
+                </a>
+            </div>
+
+
         </div>
     </div>
 	<div id="confirm" class="modal fade" role="dialog">
@@ -82,7 +89,6 @@
 				$("#confirm").modal();
 				$("#okConfirm").click(function(){
 					$.ajax({
-						url:"controller/doRemoveProduct.jsp",
 						url:"Controller/doRemoveProduct.jsp",
 						type:"POST",
 						data :{id : idProducts},
@@ -94,3 +100,4 @@
 		}
 	</script>
 <%@include file="master-page/footer.jsp"%>
+
