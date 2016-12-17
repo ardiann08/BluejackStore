@@ -47,25 +47,68 @@
                 <a class="navbar-brand" href="#">Bluejack Store</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->          
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.jsp">Home </a>
-                    </li>
-                </ul>
+            <% if(userSession == null){  %>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a>Hi, Guest </a>
-                    </li>
-                    <li>
-                        <a href="register.jsp">Register</a>
-                    </li> 
-                    <li>
-                        <a href="login.jsp">Login</a>
-                    </li>                                   
-                </ul>
-            </div>            
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.jsp">Home </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a>Hi, Guest </a>
+                        </li>
+                        <li>
+                            <a href="register.jsp">Register</a>
+                        </li> 
+                        <li>
+                            <a href="login.jsp">Login</a>
+                        </li>                                   
+                    </ul>
+                </div>   
+            <%} else{ %> 
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.jsp">Home </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="product.jsp">Product </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="member.jsp">Member </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="transaction.jsp">Transaction </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if(userSession.get(10).equals("member")){ %>
+                            <li>
+                                <a href="cart.jsp">Cart</a>
+                            </li>
+                        <%}%>
+                        <li>
+                            <a href="profile.jsp">Profile</a>
+                        </li>
+                        <li>
+                            <a href="Controller/logoutController.jsp">Log Out</a>
+                        </li>                                
+                    </ul>
+                </div>   
+
+
+
+            <%}%>        
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
