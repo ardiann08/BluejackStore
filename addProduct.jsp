@@ -1,5 +1,6 @@
 <%@include file="master-page/header.jsp"%>
 
+
 <div class="container">
         <div class="row">
         	<h3>Add New Product</h3>

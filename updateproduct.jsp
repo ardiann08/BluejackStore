@@ -17,18 +17,23 @@
 					</div>
 					<div class="form-group">
 						Price :
-						<input type="number" name="txtPrice" class="form-control" value="<%=rs.getString("price")%>">
+						<input type="number" name="txtPrice" min="1" class="form-control" value="<%=rs.getString("price")%>">
 					</div>
 					<div class="form-group">
 						Weight :
-						<input type="number" name="txtWeight" class="form-control" value="<%=rs.getString("weight")%>">
+						<input type="number" name="txtWeight" min="1" class="form-control" value="<%=rs.getString("weight")%>">
 					</div>
 					<div class="form-group">
 						Stock :
-						<input type="number" name="txtStock" class="form-control" value="<%=rs.getString("stock")%>">
+						<input type="number" name="txtStock" min="1" class="form-control" value="<%=rs.getString("stock")%>">
 					</div>
 					<div class="form-group">
 						Image<input type="file" name="txtImage">
+					</div>
+					<div class="form-group">
+						<span style="color: red">
+							<%= request.getParameter("errMsg") != null ? request.getParameter("errMsg") : "" %>
+						</span>
 					</div>
 					<button type="submit" class="btn btn-success" style="float: right;">Submit</button>
 				</form>

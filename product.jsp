@@ -47,7 +47,7 @@
         					<label >Qty : </label>
                             <input type="hidden" name="txtPrice" value="<%=rs.getString("price")%>" />
                             <input type="hidden" name="txtProductid" value="<%= rs.getString("productid") %>" />
-        					<input type="number" class="form-control" name="txtQty" min="0" style="width: 100px;display: inline;">
+        					<input type="number" class="form-control" name="txtQty" min="1" style="width: 100px;display: inline;">
         				</div>
         				<button class="btn btn-success" style="position: absolute;bottom: 0px;">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></button>
         			</form>		

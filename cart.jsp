@@ -61,14 +61,18 @@ label{
 	<div class="form-group">        			
 		<label class="control-label"></label>
 		<div>
-			<a href="#">
+			<%if(rs.getString(1) != null ){%>
+			<a href="Controller/completeOrderController.jsp">
 				<input type="button" class="form-control btn btn-primary" value="Complete Order" >
 			</a>
+			<a href="#">
+			<%}else{%>
+				<input type="button" class="form-control btn btn-primary disabled" value="Complete Order" >
+			<%}%>
+			</a>
+
 		</div>
 	</div>
-	
-	
-
 </div>
 
 <%@include file="master-page/footer.jsp"%>

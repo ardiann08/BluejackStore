@@ -23,6 +23,13 @@
 		}
 		query = "update msproduct set stock = stock - " + quantity +" where productid =" + productid;
 		st.executeUpdate(query);
+
+		query = "select count(*) from mscart where userid = " + userSession.get(0);
+		rs = st.executeQuery(query);
+		if(rs.next()){
+			userSession.set(11, rs.getString(1));
+		}
+
 		response.sendRedirect("../product.jsp?errMsg=Success add to Cart");
 	}else{
 		response.sendRedirect("../product.jsp?errMsg=Product id not valid");

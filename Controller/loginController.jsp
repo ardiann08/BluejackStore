@@ -10,6 +10,9 @@
 
 	if(rs.next()){
 		//session.setAttribute("userSession", rs.getString(1));
+		query = "select count(*) from mscart where userid = " + rs.getString(1);
+		ResultSet rs2 = stmt.executeQuery(query);		
+
 
 		ArrayList userSession = new ArrayList();
 		userSession.add(rs.getString(1));
@@ -23,6 +26,11 @@
 		userSession.add(rs.getString(9));
 		userSession.add(rs.getString(10));
 		userSession.add(rs.getString(11));
+
+		if(rs2.next()){
+			userSession.add(rs2.getString(1));
+		}
+
 		session.setAttribute("userSession", userSession);
 
 		if(request.getParameter("cbCookies")!=null){

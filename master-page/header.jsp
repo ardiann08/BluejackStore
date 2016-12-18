@@ -79,21 +79,27 @@
                             <a href="product.jsp">Product </a>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav">  
                         <li>
                             <a href="member.jsp">Member </a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li>
-                            <a href="transaction.jsp">Transaction </a>
-                        </li>
+                         <% if(userSession.get(10).equals("admin")){ %>      
+                            <li>
+                                <a href="transactionadmin.jsp">Transaction </a>
+                            </li>
+                        <%}else{%>
+                            <li>
+                                <a href="transaction.jsp">Transaction </a>
+                            </li>
+                        <%}%>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <% if(userSession.get(10).equals("member")){ %>
+                        <% if(userSession.get(10).equals("member")){ %>                        
                             <li>
-                                <a href="cart.jsp">Cart</a>
+                                <a href="cart.jsp">Cart <span class="badge"> <%= userSession.get(11) != null ? userSession.get(11) : "0" %></span></a>
                             </li>
                         <%}%>
                         <li>
